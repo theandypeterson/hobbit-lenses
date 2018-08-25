@@ -6,6 +6,10 @@ export interface UIProps {
   onFrodoCheckboxClicked(): void;
   samwiseIsSelected: boolean;
   onSamwiseCheckboxClicked(): void;
+  peregrinIsSelected: boolean;
+  onPeregrinCheckboxClicked(): void;
+  meriadocIsSelected: boolean;
+  onMeriadocCheckboxClicked(): void;
 }
 
 export const ChecklistUI = (props: UIProps) => {
@@ -20,6 +24,16 @@ export const ChecklistUI = (props: UIProps) => {
         label="Samwise"
         isChecked={props.samwiseIsSelected}
         onChange={props.onSamwiseCheckboxClicked}
+      />
+      <LabeledCheckbox
+        label="Peregrin"
+        isChecked={props.peregrinIsSelected}
+        onChange={props.onPeregrinCheckboxClicked}
+      />
+      <LabeledCheckbox
+        label="Meriadoc"
+        isChecked={props.meriadocIsSelected}
+        onChange={props.onMeriadocCheckboxClicked}
       />
     </div>
   );
