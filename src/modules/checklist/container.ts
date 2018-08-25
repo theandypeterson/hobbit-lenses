@@ -1,7 +1,7 @@
 import { ChecklistUI } from './ui';
 import { connect } from 'react-redux';
 import * as GlobalState from '../global-state';
-import * as ShireState from '../shire-state';
+import * as MiddleEarth from '../middle-earth-state';
 import { makeMapStateToPropsFunction } from '../map-state-to-props';
 import * as Actions from './actions';
 
@@ -13,14 +13,14 @@ interface StateProps {
   allSelected: boolean;
 }
 const mapStateToProps = makeMapStateToPropsFunction(
-  GlobalState.checklistLens,
+  GlobalState.middleEarthLens,
   (state) => {
     return {
-      frodoIsSelected: ShireState.frodoSelectedLens(state),
-      samwiseIsSelected: ShireState.samwiseSelectedLens(state),
-      peregrinIsSelected: ShireState.peregrinSelectedLens(state),
-      meriadocIsSelected: ShireState.meriadocSelectedLens(state),
-      allSelected: ShireState.selectAllLens(state),
+      frodoIsSelected: MiddleEarth.frodoSelectedLens(state),
+      samwiseIsSelected: MiddleEarth.samwiseSelectedLens(state),
+      peregrinIsSelected: MiddleEarth.peregrinSelectedLens(state),
+      meriadocIsSelected: MiddleEarth.meriadocSelectedLens(state),
+      allSelected: MiddleEarth.selectAllLens(state),
     };
   },
 );

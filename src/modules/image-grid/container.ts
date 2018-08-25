@@ -1,7 +1,7 @@
 import { ImageGridUI } from './ui';
 import { connect } from 'react-redux';
 import * as GlobalState from '../global-state';
-import * as LocalState from '../shire-state';
+import * as MiddleEarthState from '../middle-earth-state';
 import { makeMapStateToPropsFunction } from '../map-state-to-props';
 
 interface StateProps {
@@ -11,13 +11,13 @@ interface StateProps {
   showMeriadoc: boolean;
 }
 const mapStateToProps = makeMapStateToPropsFunction(
-  GlobalState.checklistLens,
+  GlobalState.middleEarthLens,
   (state) => {
     return {
-      showFrodo: LocalState.frodoSelectedLens(state),
-      showSamwise: LocalState.samwiseSelectedLens(state),
-      showPeregrin: LocalState.peregrinSelectedLens(state),
-      showMeriadoc: LocalState.meriadocSelectedLens(state),
+      showFrodo: MiddleEarthState.frodoSelectedLens(state),
+      showSamwise: MiddleEarthState.samwiseSelectedLens(state),
+      showPeregrin: MiddleEarthState.peregrinSelectedLens(state),
+      showMeriadoc: MiddleEarthState.meriadocSelectedLens(state),
     };
   },
 );

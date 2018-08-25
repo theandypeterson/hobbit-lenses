@@ -5,16 +5,16 @@ interface HobbitState {
   isSelected: boolean;
 }
 
-interface ShireState {
+interface MiddleEarthState {
   frodo: HobbitState;
   samwise: HobbitState;
   peregrin: HobbitState;
   meriadoc: HobbitState;
 }
 
-export type Type = ShireState;
+export type Type = MiddleEarthState;
 
-export const InitialState: ShireState = {
+export const InitialState: MiddleEarthState = {
   frodo: {
     isSelected: false,
   },
@@ -29,17 +29,17 @@ export const InitialState: ShireState = {
   },
 };
 
-const frodoLens = Lens.from<ShireState>().prop('frodo');
-const samwiseLens = Lens.from<ShireState>().prop('samwise');
-const peregrinLens = Lens.from<ShireState>().prop('peregrin');
-const meriadocLens = Lens.from<ShireState>().prop('meriadoc');
+const frodoLens = Lens.from<MiddleEarthState>().prop('frodo');
+const samwiseLens = Lens.from<MiddleEarthState>().prop('samwise');
+const peregrinLens = Lens.from<MiddleEarthState>().prop('peregrin');
+const meriadocLens = Lens.from<MiddleEarthState>().prop('meriadoc');
 const hobbitSelectedLens = Lens.from<HobbitState>().prop('isSelected');
 export const frodoSelectedLens = frodoLens.comp(hobbitSelectedLens);
 export const samwiseSelectedLens = samwiseLens.comp(hobbitSelectedLens);
 export const peregrinSelectedLens = peregrinLens.comp(hobbitSelectedLens);
 export const meriadocSelectedLens = meriadocLens.comp(hobbitSelectedLens);
 
-export const selectAllLens = Lens.of<ShireState, boolean>({
+export const selectAllLens = Lens.of<MiddleEarthState, boolean>({
   get: (state) => {
     return frodoSelectedLens(state) &&
       samwiseSelectedLens(state) &&

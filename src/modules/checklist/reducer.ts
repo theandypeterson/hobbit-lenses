@@ -1,26 +1,26 @@
 import { ActionTypeKeys, ActionTypes } from './actions';
-import * as ShireState from '../shire-state';
+import * as MiddleEarthState from '../middle-earth-state';
 
 const toggle = (v: boolean) => !v;
-const checklistReducer = (state = ShireState.InitialState, action: ActionTypes): ShireState.Type => {
+const checklistReducer = (state = MiddleEarthState.InitialState, action: ActionTypes): MiddleEarthState.Type => {
   switch (action.type) {
     case ActionTypeKeys.FrodoCheckboxClicked:
-      return ShireState.frodoSelectedLens.update(state, toggle);
+      return MiddleEarthState.frodoSelectedLens.update(state, toggle);
 
     case ActionTypeKeys.SamwiseCheckboxClicked:
-      return ShireState.samwiseSelectedLens.update(state, toggle);
+      return MiddleEarthState.samwiseSelectedLens.update(state, toggle);
 
     case ActionTypeKeys.PeregrinCheckboxClicked:
-      return ShireState.peregrinSelectedLens.update(state, toggle);
+      return MiddleEarthState.peregrinSelectedLens.update(state, toggle);
 
     case ActionTypeKeys.MeriadocCheckboxClicked:
-      return ShireState.meriadocSelectedLens.update(state, toggle);
+      return MiddleEarthState.meriadocSelectedLens.update(state, toggle);
 
     case ActionTypeKeys.MeriadocCheckboxClicked:
-      return ShireState.meriadocSelectedLens.update(state, toggle);
+      return MiddleEarthState.meriadocSelectedLens.update(state, toggle);
 
     case ActionTypeKeys.SelectAllClicked:
-      return ShireState.selectAllLens.update(state, toggle);
+      return MiddleEarthState.selectAllLens.update(state, toggle);
 
     default:
       return state;

@@ -1,10 +1,10 @@
-import * as ShireState from '../shire-state';
+import * as MiddleEarthState from '../middle-earth-state';
 import { Lens } from '@atomic-object/lenses';
 
 interface GlobalState {
-  shire: ShireState.Type,
+  middleEarth: MiddleEarthState.Type,
 }
 
 export type Type = GlobalState;
 
-export const checklistLens = Lens.from<GlobalState>().prop('shire');
+export const middleEarthLens = Lens.from<GlobalState>().prop('middleEarth');
