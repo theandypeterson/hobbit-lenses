@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 
 export type ActionTypes =
-  // SelectAllClickedAction |
+  SelectAllClickedAction |
   FrodoCheckboxClickedAction |
   SamwiseCheckboxClickedAction |
   PeregrinCheckboxClickedAction |
@@ -12,7 +12,7 @@ export enum ActionTypeKeys {
   SamwiseCheckboxClicked = 'App/SamewiseCheckboxClicked',
   PeregrinCheckboxClicked = 'App/PeregrinCheckboxClicked',
   MeriadocCheckboxClicked = 'App/MeriadocCheckboxClicked',
-  // SelectAllClicked = 'App/SelectAllClicked',
+  SelectAllClicked = 'App/SelectAllClicked',
 };
 
 interface FrodoCheckboxClickedAction extends Action {
@@ -51,11 +51,11 @@ export const meriadocCheckboxClicked = (): MeriadocCheckboxClickedAction => {
   };
 }
 
-// interface SelectAllClickedAction extends Action {
-//   type: ActionTypeKeys.SelectAllClicked;
-// }
-// export const selectAllClicked = (): SelectAllClickedAction => {
-//   return {
-//     type: ActionTypeKeys.SelectAllClicked,
-//   };
-// }
+interface SelectAllClickedAction extends Action {
+  type: ActionTypeKeys.SelectAllClicked;
+}
+export const selectAllClicked = (): SelectAllClickedAction => {
+  return {
+    type: ActionTypeKeys.SelectAllClicked,
+  };
+}

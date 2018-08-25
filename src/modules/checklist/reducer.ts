@@ -19,6 +19,9 @@ const checklistReducer = (state = MiddleEarthState.InitialState, action: ActionT
     case ActionTypeKeys.MeriadocCheckboxClicked:
       return MiddleEarthState.meriadocSelectedLens.update(state, toggle);
 
+    case ActionTypeKeys.SelectAllClicked:
+      return MiddleEarthState.selectAllLens.update(state, toggle);
+
     default:
       return state;
   }

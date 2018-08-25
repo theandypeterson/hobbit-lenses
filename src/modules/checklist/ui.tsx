@@ -10,6 +10,9 @@ export interface UIProps {
   onPeregrinCheckboxClicked(): void;
   meriadocIsSelected: boolean;
   onMeriadocCheckboxClicked(): void;
+
+  selectAllValue: boolean;
+  onSelectAllClicked(): void;
 }
 
 export const ChecklistUI = (props: UIProps) => {
@@ -34,6 +37,11 @@ export const ChecklistUI = (props: UIProps) => {
         label="Meriadoc"
         isChecked={props.meriadocIsSelected}
         onChange={props.onMeriadocCheckboxClicked}
+      />
+      <LabeledCheckbox
+        label="Select All"
+        isChecked={props.selectAllValue}
+        onChange={props.onSelectAllClicked}
       />
     </div>
   );
