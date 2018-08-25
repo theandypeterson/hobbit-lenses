@@ -4,13 +4,15 @@ export type ActionTypes =
   FrodoCheckboxClickedAction |
   SamwiseCheckboxClickedAction |
   PeregrinCheckboxClickedAction |
-  MeriadocCheckboxClickedAction;
+  MeriadocCheckboxClickedAction |
+  SelectAllClickedAction;
 
 export enum ActionTypeKeys {
   FrodoCheckboxClicked = 'App/FrodoCheckboxClicked',
   SamwiseCheckboxClicked = 'App/SamewiseCheckboxClicked',
   PeregrinCheckboxClicked = 'App/PeregrinCheckboxClicked',
   MeriadocCheckboxClicked = 'App/MeriadocCheckboxClicked',
+  SelectAllClicked = 'App/SelectAllClicked',
 };
 
 interface FrodoCheckboxClickedAction extends Action {
@@ -46,5 +48,14 @@ interface MeriadocCheckboxClickedAction extends Action {
 export const meriadocCheckboxClicked = (): MeriadocCheckboxClickedAction => {
   return {
     type: ActionTypeKeys.MeriadocCheckboxClicked,
+  };
+}
+
+interface SelectAllClickedAction extends Action {
+  type: ActionTypeKeys.SelectAllClicked;
+}
+export const selectAllClicked = (): SelectAllClickedAction => {
+  return {
+    type: ActionTypeKeys.SelectAllClicked,
   };
 }

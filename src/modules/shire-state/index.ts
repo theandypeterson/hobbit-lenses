@@ -1,4 +1,5 @@
 import { Lens } from '@atomic-object/lenses/lib';
+import * as R from 'ramda';
 
 interface HobbitState {
   isSelected: boolean;
@@ -38,3 +39,19 @@ export const samwiseSelectedLens = samwiseLens.comp(hobbitSelectedLens);
 export const peregrinSelectedLens = peregrinLens.comp(hobbitSelectedLens);
 export const meriadocSelectedLens = meriadocLens.comp(hobbitSelectedLens);
 
+export const selectAllLens = Lens.of<ShireState, boolean>({
+  get: (state) => {
+    return frodoSelectedLens(state) &&
+      samwiseSelectedLens(state) &&
+      peregrinSelectedLens(state) &&
+      meriadocSelectedLens(state);
+  },
+  set: (state, value) => {
+    return R.pipe(
+      frodoSelectedLens.set(value),
+      samwiseSelectedLens.set(value),
+      peregrinSelectedLens.set(value),
+      meriadocSelectedLens.set(value),
+    )(state);
+  },
+});
