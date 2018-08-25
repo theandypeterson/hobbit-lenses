@@ -10,7 +10,6 @@ interface StateProps {
   samwiseIsSelected: boolean;
   peregrinIsSelected: boolean;
   meriadocIsSelected: boolean;
-  allSelected: boolean;
 }
 const mapStateToProps = makeMapStateToPropsFunction(
   GlobalState.middleEarthLens,
@@ -20,7 +19,6 @@ const mapStateToProps = makeMapStateToPropsFunction(
       samwiseIsSelected: MiddleEarth.samwiseSelectedLens(state),
       peregrinIsSelected: MiddleEarth.peregrinSelectedLens(state),
       meriadocIsSelected: MiddleEarth.meriadocSelectedLens(state),
-      allSelected: MiddleEarth.selectAllLens(state),
     };
   },
 );
@@ -30,14 +28,12 @@ interface DispatchProps {
   onSamwiseCheckboxClicked(): void;
   onPeregrinCheckboxClicked(): void;
   onMeriadocCheckboxClicked(): void;
-  onSelectAllClicked(): void;
 }
 const mapDispatchToProps = {
   onFrodoCheckboxClicked: Actions.frodoCheckboxClicked,
   onSamwiseCheckboxClicked: Actions.samwiseCheckboxClicked,
   onPeregrinCheckboxClicked: Actions.peregrinCheckboxClicked,
   onMeriadocCheckboxClicked: Actions.meriadocCheckboxClicked,
-  onSelectAllClicked: Actions.selectAllClicked,
 };
 
 export const ChecklistContainer = connect<StateProps, DispatchProps>(mapStateToProps, mapDispatchToProps)(ChecklistUI);
