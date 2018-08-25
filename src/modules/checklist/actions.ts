@@ -1,10 +1,12 @@
 import { Action } from 'redux';
 
 export type ActionTypes =
-  FrodoCheckboxClickedAction;
+  FrodoCheckboxClickedAction |
+  SamwiseCheckboxClickedAction;
 
 export enum ActionTypeKeys {
   FrodoCheckboxClicked = 'App/FrodoCheckboxClicked',
+  SamwiseCheckboxClicked = 'App/SamewiseCheckboxClicked',
 };
 
 interface FrodoCheckboxClickedAction extends Action {
@@ -17,3 +19,12 @@ export const frodoCheckboxClicked = (): FrodoCheckboxClickedAction => {
   };
 }
 
+interface SamwiseCheckboxClickedAction extends Action {
+  type: ActionTypeKeys.SamwiseCheckboxClicked;
+}
+
+export const samwiseCheckboxClicked = (): SamwiseCheckboxClickedAction => {
+  return {
+    type: ActionTypeKeys.SamwiseCheckboxClicked,
+  };
+}

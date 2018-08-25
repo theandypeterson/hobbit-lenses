@@ -5,6 +5,8 @@ const checklistReducer = (state = LocalState.InitialState, action: ActionTypes):
   switch (action.type) {
     case ActionTypeKeys.FrodoCheckboxClicked:
       return LocalState.frodoSelectedLens.update(state, (v) => !v);
+    case ActionTypeKeys.SamwiseCheckboxClicked:
+      return LocalState.samwiseSelectedLens.update(state, (v) => !v);
     default:
       return state;
   }
