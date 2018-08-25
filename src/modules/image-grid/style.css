@@ -1,0 +1,18 @@
+.ImageGrid {
+  height: 500px;
+  margin-left: 250px;
+  margin-right: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.ImageBox {
+  display: flex;
+  flex-basis: calc(50% - 0px);
+  justify-content: center;
+  flex-direction: column;
+  background-color: blue;
+}
+.ImageInBox {
+  height: 100%;
+}

@@ -1,7 +1,7 @@
 import { ChecklistUI } from './ui';
 import { connect } from 'react-redux';
 import * as GlobalState from '../global-state';
-import * as LocalState from './state';
+import * as LocalState from '../shire-state';
 import { makeMapStateToPropsFunction } from '../map-state-to-props';
 import * as Actions from './actions';
 

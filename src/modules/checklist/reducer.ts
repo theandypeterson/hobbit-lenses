@@ -1,5 +1,5 @@
 import { ActionTypeKeys, ActionTypes } from './actions';
-import * as LocalState from './state';
+import * as LocalState from '../shire-state';
 
 const toggle = (v: boolean) => !v;
 const checklistReducer = (state = LocalState.InitialState, action: ActionTypes): LocalState.Type => {

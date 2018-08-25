@@ -4,16 +4,16 @@ interface HobbitState {
   isSelected: boolean;
 }
 
-interface ChecklistState {
+interface ShireState {
   frodo: HobbitState;
   samwise: HobbitState;
   peregrin: HobbitState;
   meriadoc: HobbitState;
 }
 
-export type Type = ChecklistState;
+export type Type = ShireState;
 
-export const InitialState: ChecklistState = {
+export const InitialState: ShireState = {
   frodo: {
     isSelected: false,
   },
@@ -28,10 +28,10 @@ export const InitialState: ChecklistState = {
   },
 };
 
-const frodoLens = Lens.from<ChecklistState>().prop('frodo');
-const samwiseLens = Lens.from<ChecklistState>().prop('samwise');
-const peregrinLens = Lens.from<ChecklistState>().prop('peregrin');
-const meriadocLens = Lens.from<ChecklistState>().prop('meriadoc');
+const frodoLens = Lens.from<ShireState>().prop('frodo');
+const samwiseLens = Lens.from<ShireState>().prop('samwise');
+const peregrinLens = Lens.from<ShireState>().prop('peregrin');
+const meriadocLens = Lens.from<ShireState>().prop('meriadoc');
 const hobbitSelectedLens = Lens.from<HobbitState>().prop('isSelected');
 export const frodoSelectedLens = frodoLens.comp(hobbitSelectedLens);
 export const samwiseSelectedLens = samwiseLens.comp(hobbitSelectedLens);

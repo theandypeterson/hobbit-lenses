@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import checklist from '../modules/checklist/reducer';
+import shire from '../modules/checklist/reducer';
 
 export default combineReducers({
-  checklist,
+  shire,
 });
